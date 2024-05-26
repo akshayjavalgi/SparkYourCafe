@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Table {
+public class Tables {
 
 	
 	private long tableId;

@@ -1,6 +1,9 @@
 package com.example.SparkYourCafe.Entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -13,7 +16,8 @@ public class Category {
 	private String categoryName;
 	private String description;
 	
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public long getCategoryId() {
 		return categoryId;
 	}

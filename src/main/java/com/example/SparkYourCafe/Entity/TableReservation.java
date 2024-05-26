@@ -20,7 +20,7 @@ public class TableReservation {
 	
 
 	private Customer customerId;
-	private Table tableId;
+	private Tables tableId;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -66,11 +66,11 @@ public class TableReservation {
 	
 	@ManyToOne
 	@JoinColumn(name="tableId")
-	public Table getTableId() {
+	public Tables getTableId() {
 		return tableId;
 	}
 	
-	public void setTableId(Table tableId) {
+	public void setTableId(Tables tableId) {
 		this.tableId = tableId;
 	}
 	
