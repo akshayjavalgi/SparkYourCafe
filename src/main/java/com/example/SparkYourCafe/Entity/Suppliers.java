@@ -1,6 +1,9 @@
 package com.example.SparkYourCafe.Entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Suppliers {
@@ -11,7 +14,8 @@ public class Suppliers {
 	private String supplierEmail;
 	private String address;
 	
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public long getSupplierId() {
 		return supplierId;
 	}
