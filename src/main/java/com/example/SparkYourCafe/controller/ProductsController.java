@@ -69,13 +69,13 @@ public class ProductsController {
 	        return new ResponseEntity<>(products, HttpStatus.OK);
 	    }
 
-	    @GetMapping("/search")
+	    @GetMapping("/search-by-name")
 	    public ResponseEntity<List<Products>> searchProductsByName(@RequestParam String name) {
 	        List<Products> products = productsService.searchProductsByName(name);
 	        return new ResponseEntity<>(products, HttpStatus.OK);
 	    }
 
-	    @GetMapping("/search")
+	    @GetMapping("/search-by-price")
 	    public ResponseEntity<List<Products>> searchProductsByPrice(@RequestParam double price) {
 	        List<Products> products = productsService.searchProductsByPrice(price);
 	        return new ResponseEntity<>(products, HttpStatus.OK);
