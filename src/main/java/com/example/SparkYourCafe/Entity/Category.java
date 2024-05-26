@@ -1,6 +1,10 @@
 package com.example.SparkYourCafe.Entity;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+import org.springframework.lang.NonNull;
 
 @Entity
 public class Category {
@@ -8,18 +12,25 @@ public class Category {
 	private long categoryId;
 	private String categoryName;
 	private String description;
+	
+	
 	public long getCategoryId() {
 		return categoryId;
 	}
 	public void setCategoryId(long categoryId) {
 		this.categoryId = categoryId;
 	}
+	
+	@NonNull
+	@NotBlank
 	public String getCategoryName() {
 		return categoryName;
 	}
 	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
 	}
+	
+	@Size(min = 20 ,max = 250, message = "Enter min 20 character and maximun 250")
 	public String getDescription() {
 		return description;
 	}

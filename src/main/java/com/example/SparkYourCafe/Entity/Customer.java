@@ -4,6 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Length;
 
 @Entity
 public class Customer {
@@ -21,18 +26,27 @@ public class Customer {
 	public void setCustomerId(long customerId) {
 		this.customerId = customerId;
 	}
+	
+	@NotNull
+	@NotEmpty
 	public String getCustomerName() {
 		return customerName;
 	}
 	public void setCustomerName(String customerName) {
 		this.customerName = customerName;
 	}
+	
+	@Email
 	public String getCustomerEmail() {
 		return customerEmail;
 	}
 	public void setCustomerEmail(String customerEmail) {
 		this.customerEmail = customerEmail;
 	}
+	
+	@NotEmpty
+	@NotNull
+	@Length(min = 10,max = 10,message = "Enter valid mobile number")
 	public long getCustomerMobile() {
 		return customerMobile;
 	}

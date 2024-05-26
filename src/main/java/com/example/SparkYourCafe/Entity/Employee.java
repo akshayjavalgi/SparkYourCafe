@@ -6,6 +6,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Length;
 
 @Entity
 public class Employee {
@@ -28,6 +34,9 @@ public class Employee {
 		this.employeeId = employeeId;
 	}
 
+	@NotNull
+	@NotEmpty
+	@Size(min = 2,max = 20,message = "Please enter valid name")
 	public String getEmployeeName() {
 		return employeeName;
 	}
@@ -36,6 +45,8 @@ public class Employee {
 		this.employeeName = employeeName;
 	}
 
+	@NotNull
+	@NotEmpty
 	public String getDesignation() {
 		return designation;
 	}
@@ -44,6 +55,7 @@ public class Employee {
 		this.designation = designation;
 	}
 
+	@Email
 	public String getEmployeeEmail() {
 		return employeeEmail;
 	}
@@ -51,7 +63,8 @@ public class Employee {
 	public void setEmployeeEmail(String employeeEmail) {
 		this.employeeEmail = employeeEmail;
 	}
-
+ 
+	@Length(min = 10,max = 10,message = "Enter valid mobile number")
 	public long getEmployeeMobile() {
 		return employeeMobile;
 	}
@@ -60,6 +73,8 @@ public class Employee {
 		this.employeeMobile = employeeMobile;
 	}
 
+	@NotNull
+	@NotEmpty
 	public double getSalary() {
 		return salary;
 	}

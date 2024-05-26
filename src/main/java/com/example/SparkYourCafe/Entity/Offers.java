@@ -6,6 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Offers {
@@ -26,30 +29,42 @@ public class Offers {
 	public void setOfferId(long offerId) {
 		this.offerId = offerId;
 	}
+	@Size(min = 2 ,max = 20, message = "Enter valid name")
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	@Size(min = 20 ,max = 250, message = "Enter min 20 character and maximun 250")
 	public String getDeescription() {
 		return deescription;
 	}
 	public void setDeescription(String deescription) {
 		this.deescription = deescription;
 	}
+	
+	@NotNull
+	@NotEmpty
 	public LocalDate getStartDate() {
 		return startDate;
 	}
 	public void setStartDate(LocalDate startDate) {
 		this.startDate = startDate;
 	}
+	
+	@NotNull
+	@NotEmpty
 	public LocalDate getEndDate() {
 		return endDate;
 	}
 	public void setEndDate(LocalDate endDate) {
 		this.endDate = endDate;
 	}
+	
+	@NotNull
+	@NotEmpty
 	public double getDiscount() {
 		return discount;
 	}

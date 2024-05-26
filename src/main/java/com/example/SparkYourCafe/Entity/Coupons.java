@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Coupons {
@@ -32,6 +34,8 @@ public class Coupons {
 		this.couponId = couponId;
 	}
 
+	@NotNull
+	@NotEmpty
 	public String getCouponCode() {
 		return couponCode;
 	}
@@ -40,6 +44,8 @@ public class Coupons {
 		this.couponCode = couponCode;
 	}
 
+	@NotNull
+	@NotEmpty
 	public double getDiscountPercentage() {
 		return discountPercentage;
 	}
@@ -48,6 +54,8 @@ public class Coupons {
 		this.discountPercentage = discountPercentage;
 	}
 
+	@NotNull
+	@NotEmpty
 	public LocalDate getStartDate() {
 		return startDate;
 	}
@@ -55,7 +63,9 @@ public class Coupons {
 	public void setStartDate(LocalDate startDate) {
 		this.startDate = startDate;
 	}
-
+ 
+	@NotNull
+	@NotEmpty
 	public LocalDate getEndDate() {
 		return endDate;
 	}

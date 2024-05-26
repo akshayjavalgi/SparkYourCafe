@@ -8,6 +8,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 
 
@@ -34,6 +38,7 @@ public class Complaints {
 		this.complaintId = complaintId;
 	}
 
+	@Size(min = 20 ,max = 250, message = "Enter min 20 character and maximun 250")
 	public String getDescription() {
 		return description;
 	}
@@ -42,6 +47,8 @@ public class Complaints {
 		this.description = description;
 	}
 
+	@NotBlank
+	@NotNull
 	public LocalDate getDate() {
 		return date;
 	}
@@ -50,6 +57,7 @@ public class Complaints {
 		this.date = date;
 	}
 
+	@NotEmpty
 	public String getStatus() {
 		return status;
 	}

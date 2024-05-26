@@ -8,6 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Feedback {
@@ -29,18 +32,24 @@ public class Feedback {
 	public void setFeedbackId(long feedbackId) {
 		this.feedbackId = feedbackId;
 	}
+	@Size(min = 20 ,max = 250, message = "Enter min 20 character and maximun 250")
 	public String getComment() {
 		return comment;
 	}
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
+	
+	@NotNull
+	@NotEmpty
 	public int getRating() {
 		return rating;
 	}
 	public void setRating(int rating) {
 		this.rating = rating;
 	}
+	@NotNull
+	@NotEmpty
 	public LocalDate getFeedbackdate() {
 		return feedbackdate;
 	}
