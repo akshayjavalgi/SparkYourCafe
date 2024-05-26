@@ -20,7 +20,7 @@ public class Orders {
 	private Category categoryId;
 	private Products productId;
 	
-	@Id
+	
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public long getOrderId() {
 		return orderId;
